@@ -21,5 +21,8 @@
             </tr>
         </c:forEach>
     </table>
+
+    <div>W koszyku jest ${size} pozycji</div>
+    <div>Wartość koszyka to ${summary}</div>
 </body>
 </html>

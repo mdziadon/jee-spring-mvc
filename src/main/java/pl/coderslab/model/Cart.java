@@ -25,4 +25,16 @@ public class Cart {
     public void addToCart(CartItem cartItem) {
         cartItems.add(cartItem);
     }
+
+    public CartItem getCartItem(Product product) {
+        return cartItems.stream()
+                .filter(c -> c.getProduct().equals(product))
+                .findFirst().orElse(null);
+    }
+
+    public double getSum() {
+        return cartItems.stream()
+                .mapToDouble(c -> c.getQuantity() * c.getProduct().getPrice())
+                .sum();
+    }
 }
